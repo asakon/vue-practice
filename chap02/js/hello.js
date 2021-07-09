@@ -1,26 +1,16 @@
 let app = new Vue ({
 	el: '#app',
 	data: {
-		message: 'みなさん、こんにちは',
-		url: 'https://wings.msn.to',
-		flag: true,
-		email: 'Y-Suzuki@example.com',
-		current: new Date().toLocaleString()
+		current: new Date()
 	},
-	computed: {
-		randomc: function() {
-			return Math.random();
-		}
+	created: function() {
+		let that = this;
+
+		that.timer = setInterval(function() {
+			that.current = new Date();
+		}, 1000);
 	},
-	methods: {
-		localEmail: function() {
-			return this.email.split('@')[0].toLowerCase();
-		},
-		onclick: function() {
-			this.current = new Date().toLocaleString();
-		},
-		randomm: function() {
-			return Math.random();
-		}
+	beforeDestroy: function() {
+		clearInterval(this.timer);
 	}
 });
