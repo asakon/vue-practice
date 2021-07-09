@@ -6,7 +6,7 @@ let app = new Vue ({
 		flag: true,
 		email: 'Y-Suzuki@example.com'
 	},
-	computed: {
+	methods: {
 		localEmail: function() {
 			return this.email.split('@')[0].toLowerCase();
 		}
