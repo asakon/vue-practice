@@ -5,5 +5,10 @@ let app = new Vue ({
 		url: 'https://wings.msn.to',
 		flag: true,
 		email: 'Y-Suzuki@example.com'
+	},
+	computed: {
+		localEmail: function() {
+			return this.email.split('@')[0].toLowerCase();
+		}
 	}
 });
