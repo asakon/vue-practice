@@ -3,6 +3,7 @@ let app = new Vue ({
 	data: {
 		message: 'みなさん、こんにちは',
 		url: 'https://wings.msn.to',
-		flag: true
+		flag: true,
+		email: 'Y-Suzuki@example.com'
 	}
 });
