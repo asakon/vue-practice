@@ -1,11 +1,14 @@
 new Vue({
 	el: '#app',
 	data: {
-		message: ''
+		result: ''
 	},
 	methods: {
-		onclick: function() {
-			this.message = new Date().toLocaleString();
-		}
+		onmousein: function(e) {
+			this.result += 'Enter:' + e.target.id + '<br />';
+		},
+		onmouseout: function(e) {
+			this.result += 'Leave:' + e.target.id + '<br />';
+		},
 	}
 });
