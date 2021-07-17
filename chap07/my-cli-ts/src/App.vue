@@ -3,21 +3,30 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" /> -->
     <MyHello></MyHello>
+    <MyCounter step="1" v-on:plus="onplus"></MyCounter>
+    <p>現在値：{{ current }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-import MyHello from './components/MyHello.vue';
+import { Component, Vue } from "vue-property-decorator";
+import HelloWorld from "./components/HelloWorld.vue";
+import MyHello from "./components/MyHello.vue";
+import MyCounter from "./components/MyCounter.vue";
 
 @Component({
   components: {
     HelloWorld,
     MyHello,
+    MyCounter,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private current: number = 0;
+  private onplus(e: number) {
+    this.current += e;
+  }
+}
 </script>
 
 <style>
